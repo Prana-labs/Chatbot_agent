@@ -114,13 +114,13 @@ pip install -r requirements.txt
 ### Windows
 
 ```bash
-set GROQ_API_KEY=your_api_key_here
+set OPENAI_API_KEY=your_api_key_here
 ```
 
 ### macOS / Linux
 
 ```bash
-export GROQ_API_KEY=your_api_key_here
+export OPENAI_API_KEY=your_api_key_here
 ```
 
 You can also provide it directly through the Streamlit sidebar.
@@ -139,8 +139,8 @@ streamlit run app.py
 
 After launching:
 
-- Local URL → `http://localhost:8501`
-- Network URL → `http://your-ip:8501`
+- Local URL → `http://localhost:8508`
+- Network URL → `http://your-ip:8508`
 
 ---
 
@@ -175,7 +175,7 @@ Chatbot_agent/
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
-└── venv/
+└── ytenv/
 ```
 
 ---
@@ -196,7 +196,7 @@ Chatbot_agent/
 - Finds the top most relevant chunks for every query
 
 ### 4. LLM Answer Generation
-- Sends only relevant chunks to Groq LLM
+- Sends only relevant chunks to Openai LLM
 - Produces accurate, context-aware responses
 
 ---
