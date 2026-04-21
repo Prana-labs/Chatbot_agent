@@ -74,7 +74,7 @@ cd Chatbot_agent
 ### 2. Create Virtual Environment
 
 ```bash
-python -m venv venv
+python -m venv ytenv
 ```
 
 ---
@@ -84,13 +84,13 @@ python -m venv venv
 ### Windows
 
 ```bash
-venv\Scripts\activate
+ytenv\Scripts\activate
 ```
 
 ### macOS / Linux
 
 ```bash
-source venv/bin/activate
+source ytenv/bin/activate
 ```
 
 ---
