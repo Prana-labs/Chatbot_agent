@@ -26,8 +26,8 @@ This ensures highly relevant answers with reduced token usage.
 
 ---
 
-### ⚡ Groq LLM Integration
-Powered by **Groq’s ultra-fast LLM inference**, delivering:
+### ⚡ OPENAI LLM Integration
+Powered by **OPENAI ultra-fast LLM inference**, delivering:
 - Faster responses
 - Accurate contextual answers
 - Better user experience
@@ -52,7 +52,7 @@ If Groq becomes unavailable:
 ## 🛠️ Tech Stack
 
 - **Frontend:** Streamlit
-- **LLM Provider:** Groq API
+- **LLM Provider:** Openai API
 - **Transcript Extraction:** yt-dlp
 - **Embeddings:** Sentence Transformers (`all-MiniLM-L6-v2`)
 - **Vector Database:** FAISS
