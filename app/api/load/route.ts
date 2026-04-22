@@ -1,14 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { YoutubeTranscript } from "youtube-transcript";
-
-export const vectorStores: Record<string, { chunks: string[]; embeddings: number[][] }> = {};
+import { vectorStores } from "../store";
 
 export async function POST(req: NextRequest) {
   try {
     const { videoId } = await req.json();
     if (!videoId) return NextResponse.json({ error: "videoId is required" }, { status: 400 });
 
-    // Fetch transcript
     let transcript = "";
     try {
       const transcriptArr = await YoutubeTranscript.fetchTranscript(videoId);
@@ -18,13 +16,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Could not fetch transcript. Make sure the video has captions enabled." }, { status: 400 });
     }
 
-    if (!transcript) {
-      return NextResponse.json({ error: "Transcript is empty." }, { status: 400 });
-    }
+    if (!transcript) return NextResponse.json({ error: "Transcript is empty." }, { status: 400 });
 
-    // Chunk the transcript
-    const chunkSize = 1000;
-    const overlap = 200;
+    const chunkSize = 1000, overlap = 200;
     const chunks: string[] = [];
     let i = 0;
     while (i < transcript.length) {
